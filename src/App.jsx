@@ -1,13 +1,17 @@
-import { useState } from 'react'
 import './App.css'
-import LocationTracker from './components/page1'
+import RoomList from './components/RoomScreen'
+import LocationTracker from './components/LocationTracker'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <LocationTracker />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<RoomList />} />
+          <Route path="tracker" element={<LocationTracker />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
